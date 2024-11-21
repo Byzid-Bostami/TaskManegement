@@ -10,7 +10,7 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    axios.post("http://localhost:4000/register", {userName, userMail, password})
+    axios.post("https://taskmanegement-backend.onrender.com/register", {userName, userMail, password})
         .then(()=>{
           navigate('/login');
         })
