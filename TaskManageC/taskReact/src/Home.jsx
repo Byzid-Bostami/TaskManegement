@@ -31,7 +31,7 @@ const Home = () => {
   const getData = async () => {
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.get('http://localhost:4000/', {
+      const res = await axios.get('https://taskmanegement-backend.onrender.com', {
         headers: {
           Authorization: token,
         },
@@ -60,7 +60,7 @@ const Home = () => {
       }
 
       const res = await axios.post(
-        'http://localhost:4000/',
+        'https://taskmanegement-backend.onrender.com',
         { 
           title: postTitle,
           description: postDescription,
@@ -100,7 +100,7 @@ const Home = () => {
   const deleteTask = async(id) => {
     try {
       const token = localStorage.getItem('token');
-      await axios.delete(`http://localhost:4000/${id}`, {
+      await axios.delete(`https://taskmanegement-backend.onrender.com/${id}`, {
         headers: {
           Authorization: token,
         },
@@ -119,7 +119,7 @@ const Home = () => {
     try {
       const token = localStorage.getItem('token');
       await axios.put(
-        `http://localhost:4000/${id}`,
+        `https://taskmanegement-backend.onrender.com/${id}`,
         { completed: status },
         {
           headers: {
@@ -155,7 +155,7 @@ const Home = () => {
     try {
       const token = localStorage.getItem('token');
       await axios.put(
-        `http://localhost:4000/${editTaskId}`,
+        `https://taskmanegement-backend.onrender.com/${editTaskId}`,
         { 
           title: postTitle, 
           description: postDescription, 
