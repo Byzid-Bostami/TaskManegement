@@ -13,7 +13,7 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    axios.post("http://localhost:4000/login", {userName, userMail, password})
+    axios.post("https://taskmanegement-backend.onrender.com/login", {userName, userMail, password})
         .then((User)=>{
           localStorage.setItem("token", User.data.token);
           console.log(User)
@@ -33,7 +33,7 @@ const Login = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
 
-    axios.get("http://localhost:4000/", {
+    axios.get("https://taskmanegement-backend.onrender.com", {
       headers:{
           Authorization:token,
       }
